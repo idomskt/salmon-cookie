@@ -1,0 +1,22 @@
+header {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+header ul {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+header ul li {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+header img {
+    max-width: 175px;
+}
