@@ -1,11 +1,33 @@
-header {
+body {
+    margin: 0;
     max-width: 980px;
-    margin: 0 auto;
-    display: flex;
+    margin: auto;
 }
 ul {
     list-style: none;
     padding: 0;
+}
+h1, h2, h3 {
+    color: #c14c60;
+    font-family: 'Montserrat', sans-serif;
+}
+p {
+    font-family: georgia;
+}
+strong {
+    font-family: 'Montserrat', sans-serif;
+    color: #d42f2f;
+}
+header {
+    background-color: pink;
+    margin: 0 auto;
+    display: flex;
+    padding: 20px;
+    border-bottom: 5px solid brown;
+    box-sizing: border-box;
+}
+header img {
+    max-width: 175px;
 }
 header ul {
     display: inline-block;
@@ -16,7 +38,53 @@ header ul li {
     display: inline-block;
     vertical-align: middle;
     padding: 0 10px;
+    font-family: 'Montserrat', sans-serif;
 }
-header img {
-    max-width: 175px;
+.title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+}
+.storeTables {
+    text-align: center;
+    display: flex;
+    font-family: arial;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+.location {
+    width: 33.3%;
+}
+.location table {
+    border-spacing: 0px;
+    margin: auto;
+}
+.location td, .location th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+.location th {
+    background-color: #eaeaea;
+}
+
+/* --------------------------- STYLE GUIDE ------------------------------- */
+.style-guide {
+    background-color: aliceblue;
+}
+.style-guide-title {
+    color: black;
+}
+.style-guide-inner {
+    max-width: 680px;
+    margin: 30px auto;
+    padding: 10px;
+    border: 3px solid #000000;
+    background-color: white;
+}
+.theme-colors {
+    display: flex;
+}
+.theme-colors li {
+    padding: 30px;
+    border: 1px solid grey;
+    margin: 5px;
 }

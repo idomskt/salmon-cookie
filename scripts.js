@@ -49,42 +49,6 @@ var pearlDistrict = {
 };
 
 
-// function cookiesPerHour() {
-
-//     var allLocations = [pioneerSquare, portlandAirport, washingtonSquare, sellwood, pearlDistrict];
-
-//     for(var storeIndex = 0; storeIndex < allLocations.length; storeIndex++) {
-
-//         var printStoreName = document.getElementById(allLocations[storeIndex].id + 'Title');
-//         printStoreName.innerHTML += allLocations[storeIndex].name;
-
-//         // Loop through each hour of the day
-//         for(var hoursIndex = 0; hoursIndex < allLocations[storeIndex].openTime.length; hoursIndex++) {
-//             // Generate Random Number
-//             function randomNumCustomers() {
-//                 return Math.floor(Math.random() * (allLocations[storeIndex].max - allLocations[storeIndex].min + 1)) + allLocations[storeIndex].min;
-//             };
-//             var holdFuncValue = randomNumCustomers();
-//             var printToScreen = document.getElementById(allLocations[storeIndex].id + '-ul');
-//             printToScreen.innerHTML += '<li>' + allLocations[storeIndex].openTime[hoursIndex] + ': ' + holdFuncValue + ' Cookies</li>';
-//             allLocations[storeIndex].total += holdFuncValue; // Add the result of the random number to the total
-//         }
-        
-//         printToScreen.innerHTML += '<li>Total: ' + allLocations[storeIndex].total + ' Cookies</li>';
-
-//     }
-
-// }
-
-
-
-// cookiesPerHour();
-
-
-
-
-
-
 
 
 
@@ -101,23 +65,24 @@ function cookiesPerHour() {
         var printStoreTable = document.getElementById(allLocations[storeIndex].id + '-table');
         printStoreTable.innerHTML += '<tr><th>Time</th><th>Cookies</th><th>Total Money</th></tr>';
         
-        var totalMoneyDay = 0;
-
         // Loop through each hour of the day
         for(var hoursIndex = 0; hoursIndex < allLocations[storeIndex].openTime.length; hoursIndex++) {
+
             // Generate Random Number
             function randomNumCustomers() {
                 return Math.floor(Math.random() * (allLocations[storeIndex].max - allLocations[storeIndex].min + 1)) + allLocations[storeIndex].min;
             };
             var holdFuncValue = randomNumCustomers();
-            var totalMoneyPerHour = allLocations[storeIndex].ave * holdFuncValue;
-            totalMoneyDay += totalMoneyPerHour;
+
+            // Calculating the values
+            var cookiesPerDay = allLocations[storeIndex].total += holdFuncValue; // Add the result of the random number to the total
+            var totalMoneyPerHour = allLocations[storeIndex].ave * holdFuncValue; // Multiply the random number of each hour with the price avarage
+            var totalMoneyPerDay = cookiesPerDay * allLocations[storeIndex].ave; // Multiply the total cookies per day with the the avarage
 
             printStoreTable.innerHTML += '<tr><td>' + allLocations[storeIndex].openTime[hoursIndex] + '</td><td>' + holdFuncValue + '</td><td>' + totalMoneyPerHour + '</td></tr>';
-            allLocations[storeIndex].total += holdFuncValue; // Add the result of the random number to the total
-            allLocations[storeIndex].total += holdFuncValue; // Add the result of the random number to the total
         }
-        printStoreTable.innerHTML += '<tr><th>Total:</th><th>' + allLocations[storeIndex].total + '</th><th>' + totalMoneyDay + '</th></tr>';
+
+        printStoreTable.innerHTML += '<tr><th>Total:</th><th>' + cookiesPerDay + '</th><th>' + totalMoneyPerDay + '</th></tr>';
         
 
     }
@@ -127,35 +92,3 @@ function cookiesPerHour() {
 
 
 cookiesPerHour();
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var storeLocations = [pioneerSquare];
-
-
-// function calcHourCost(storeName) {
-
-//     for(var store = 0; store < storeLocations.length; store++) {
-
-//         var printStoreName = document.getElementById(storeName.id + 'Title');
-//         printStoreName.innerHTML+=storeName.name;
-        
-//         for(var i = 0; i < storeName.openTime.length; i++) {
-//             var printHours = document.getElementById(storeName.id + '-ul');
-//             printHours.innerHTML+='<li>' + storeName.openTime[i] + ': ' + storeName.randomNumCustomers() + ' Cookies</li>';
-//         }
-//     }
-
-// }
-
-// calcHourCost(pioneerSquare);
