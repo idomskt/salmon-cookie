@@ -44,6 +44,49 @@ header ul li {
     font-family: 'Indie Flower', cursive;
     font-size: 40px;
 }
+.menu-body {
+    position: relative;
+    border-bottom: 50px solid #c14c60;
+    padding-bottom: 0;
+    margin: 20px;
+}
+.menu-body .inner {
+    max-width: 665px;
+    margin-left: auto;
+}
+.menu-item {
+    position: relative;
+    margin-bottom: 22px;
+}
+.menu-item-name, .menu-item-price {
+    color: #c14c60;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.menu-item-name {
+    border-bottom: 1px solid brown;
+}
+.menu-item-price {
+    position: absolute;
+    right: 5px;
+    margin-top: -24px;
+}
+.menu-item-desc {
+    font-style: italic;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+}
+.menu-body .lastTwo {
+    max-width: 455px;
+    margin-left: auto;
+}
+.menu-body img {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -64px;
+}
 .storeTables {
     text-align: center;
     display: flex;
