@@ -92,7 +92,7 @@ header ul li {
     display: flex;
     font-family: arial;
     font-size: 14px;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 }
 .location {
     width: 33.3%;
