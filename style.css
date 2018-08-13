@@ -49,6 +49,7 @@ header ul li {
     border-bottom: 50px solid #c14c60;
     padding-bottom: 0;
     margin: 20px;
+    margin-bottom: 0;
 }
 .menu-body .inner {
     max-width: 665px;
@@ -86,6 +87,27 @@ header ul li {
     position: absolute;
     bottom: 0;
     margin-bottom: -64px;
+}
+.shape-divider {
+    text-align: center;
+}
+.shape-divider img {
+    max-width: 125px;
+}
+.foodStickers ul {
+    display: flex;
+}
+.foodStickers li {
+    text-align: center;
+}
+.foodStickers img {
+    max-width: 100px;
+}
+.foodStickers li p {
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
 }
 .storeTables {
     text-align: center;
