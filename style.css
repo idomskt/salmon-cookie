@@ -12,43 +12,73 @@ h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
 }
 p {
-    font-family: georgia;
+    font-family: 'Montserrat', sans-serif;
 }
 strong {
     font-family: 'Montserrat', sans-serif;
     color: #d42f2f;
 }
 header {
-    background-color: pink;
     margin: 0 auto;
     display: flex;
-    padding: 20px;
+    height: 90px;
     border-bottom: 5px solid brown;
     box-sizing: border-box;
 }
 header img {
-    max-width: 175px;
+    max-width: 200px;
+    padding-top: 10px;
 }
 header ul {
     display: inline-block;
     width: 100%;
     text-align: right;
+    margin: 0;
 }
 header ul li {
     display: inline-block;
     vertical-align: middle;
-    padding: 0 10px;
-    font-family: 'Montserrat', sans-serif;
+    line-height: 90px;
+    padding: 0 30px;
+    height: 85px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+}
+header li:hover {
+    background-color: pink;
 }
 .title {
     font-family: 'Indie Flower', cursive;
     font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffe9ed;
+}
+.about {
+    background-image: url(http://i44.photobucket.com/albums/f35/idomosko/Baker_zpsejcvjbi8.jpg);
+    background-size: cover;
+    display: inline-block;
+    border-bottom: 8px solid pink;
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.about h2 {
+    max-width: 450px;
+    border-bottom: 3px solid;
+    padding-bottom: 5px;
+}
+.about p {
+    max-width: 560px;
+    color: #ffe9ed;
+    font-size: 20px;
 }
 .menu-body {
     position: relative;
     border-bottom: 50px solid #c14c60;
     padding-bottom: 0;
-    margin: 20px;
+    margin: 50px 20px 20px;
     margin-bottom: 0;
 }
 .menu-body .inner {
@@ -90,12 +120,16 @@ header ul li {
 }
 .shape-divider {
     text-align: center;
+    background-color: #ffe9ed;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .shape-divider img {
     max-width: 125px;
 }
 .foodStickers ul {
     display: flex;
+    margin-top: 50px;
 }
 .foodStickers li {
     text-align: center;
