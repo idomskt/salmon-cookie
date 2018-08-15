@@ -12,7 +12,6 @@ var Store = function(id, name, min, max, ave) {
 }
 
 
-
 var stores = [];
 
 stores.push(new Store('pioneerSquare', 'Pioneer Square', 17, 88, 5.2));
@@ -53,15 +52,17 @@ function printStores() {
         
         // Loop through each hour
         for(hoursIndex = 0; hoursIndex < stores[storesIndex].hours.length; hoursIndex++) {
-            // Hold the value of the random number
             
+            // Hold the value of the random number
+            var storeRandNum = stores[storesIndex].randomNumCustomers();
+            
+            // Print the tables data
             row = document.createElement('tr');
             var tableDataTime = document.createElement('td');
             tableDataTime.innerText = stores[storesIndex].hours[hoursIndex];
             row.appendChild(tableDataTime);
             
             var tableDataCookies = document.createElement('td');
-            var storeRandNum = stores[storesIndex].randomNumCustomers();
             tableDataCookies.innerText = storeRandNum;
             row.appendChild(tableDataCookies);
             stores[storesIndex].total += storeRandNum;
@@ -74,6 +75,7 @@ function printStores() {
     
         }
 
+        // Print the totals
         row = document.createElement('tr');
 
         var printTotal = document.createElement('th');
