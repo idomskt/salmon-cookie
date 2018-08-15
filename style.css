@@ -152,10 +152,13 @@ header li:hover {
 }
 .location {
     width: 33.3%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .location table {
     border-spacing: 0px;
     margin: auto;
+    width: 100%;
 }
 .location td, .location th {
     border: 1px solid black;
