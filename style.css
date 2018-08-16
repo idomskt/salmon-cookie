@@ -22,7 +22,7 @@ header {
     margin: 0 auto;
     display: flex;
     height: 90px;
-    border-bottom: 5px solid brown;
+    border-bottom: 5px solid pink;
     box-sizing: border-box;
 }
 header img {
@@ -53,7 +53,8 @@ header li:hover {
     text-align: center;
     margin: 0;
     padding: 20px;
-    background-color: #ffe9ed;
+    background-color: brown;
+    color: #ffe9ed;
 }
 .about {
     background-image: url(http://i44.photobucket.com/albums/f35/idomosko/Baker_zpsejcvjbi8.jpg);
@@ -73,6 +74,14 @@ header li:hover {
     max-width: 560px;
     color: #ffe9ed;
     font-size: 20px;
+}
+.about p::first-letter {
+    font-size: 48px;
+    float: left;
+    line-height: 48px;
+    font-weight: bold;
+    padding-right: 10px;
+    margin-top: 1px;
 }
 .menu-body {
     position: relative;
@@ -142,6 +151,32 @@ header li:hover {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
+}
+.testimonials {
+    border-top: 5px solid pink;
+    background-color: brown;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.testimonials img {
+    max-width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.testimonials i {
+    font-size: 100px;
+    position: absolute;
+    color: #e2e2e2;
+    opacity: 0.6;
+}
+.testimonials blockquote {
+    display: inline-block;
+    max-width: 65%;
+    font-size: 30px;
+    vertical-align: middle;
+    font-style: italic;
+    margin: 25px 25px 25px 60px;
+    color: white;
 }
 .storeTables {
     text-align: center;
