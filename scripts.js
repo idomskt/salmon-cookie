@@ -9,6 +9,68 @@ var Store = function(id, name, min, max, ave) {
     this.randomNumCustomers = function() {
         return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     };
+
+    this.createTitle = function() {
+        var titleID = document.getElementById(this.id + 'Title');
+        titleID.innerText = this.name;
+    };
+
+    this.createTables = function() {
+            var tableID = document.getElementById(this.id);
+            var table = document.createElement('table');
+            var tbody = document.createElement('tbody');
+            tbody.setAttribute('class', 'tbody');
+            var row = document.createElement('tr');
+            var theader = document.createElement('th');
+            theader.innerText = 'Time';
+            row.appendChild(theader);
+            theader = document.createElement('th');
+            theader.innerText = 'Cookies';
+            row.appendChild(theader);
+            theader = document.createElement('th');
+            theader.innerText = 'Money';
+            row.appendChild(theader);
+            tbody.appendChild(row);
+            table.appendChild(tbody);
+            tableID.appendChild(table);
+        };
+
+        this.createData = function() {
+
+            var findTBody1 = document.getElementById(this.id);
+            var findTBody2 = findTBody1.getElementsByTagName('tbody')[0];
+
+            for(var hoursIndex = 0; hoursIndex < this.hours.length; hoursIndex++) {
+                var randNumber = this.randomNumCustomers();
+                row = document.createElement('tr');
+                tdata = document.createElement('td');
+                tdata.innerText = this.hours[hoursIndex];
+                row.appendChild(tdata);
+                tdata = document.createElement('td');
+                tdata.innerText = randNumber;
+                this.total += randNumber;
+                row.appendChild(tdata);
+                tdata = document.createElement('td');
+                tdata.innerText = randNumber * this.ave;
+                row.appendChild(tdata);
+                findTBody2.appendChild(row);
+            }
+
+            // Bottom TH
+            row = document.createElement('tr');
+            cell = document.createElement('th');
+            cell.innerText = 'Total';
+            row.appendChild(cell);
+            cell = document.createElement('th');
+            cell.innerText = this.total;
+            row.appendChild(cell);
+            cell = document.createElement('th');
+            cell.innerText = this.total * this.ave;
+            row.appendChild(cell);
+            findTBody2.appendChild(row);
+         };
+
+
 }
 
 
@@ -21,79 +83,8 @@ stores.push(new Store('sellwood', 'Sellwood', 20, 48, 3.3));
 stores.push(new Store('pearlDistrict', 'Pearl District', 3, 24, 2.6));
 
 
-
-function printStores() {
-    // Loop through each location
-
-    for(var storesIndex = 0; storesIndex < stores.length; storesIndex++) {
-        
-        // Create a title to each store
-        var title = document.getElementById(stores[storesIndex].id + 'Title');
-        title.innerText = stores[storesIndex].name;
-        // Create a table for each store
-        var printTable = document.getElementById(stores[storesIndex].id)
-        var table = document.createElement('table');
-        var tbody = document.createElement('tbody');
-        var row = document.createElement('tr');
-        var th = document.createElement('th');
-
-        th.innerText = 'Time';
-        row.appendChild(th);
-        th = document.createElement('th');
-        th.innerText = 'Cookies';
-        row.appendChild(th);
-        th = document.createElement('th');
-        th.innerText = 'Money';
-        row.appendChild(th);
-        
-        tbody.appendChild(row);
-        table.appendChild(tbody);
-        printTable.appendChild(table);
-        
-        // Loop through each hour
-        for(hoursIndex = 0; hoursIndex < stores[storesIndex].hours.length; hoursIndex++) {
-            
-            // Hold the value of the random number
-            var storeRandNum = stores[storesIndex].randomNumCustomers();
-            
-            // Print the tables data
-            row = document.createElement('tr');
-            var tableDataTime = document.createElement('td');
-            tableDataTime.innerText = stores[storesIndex].hours[hoursIndex];
-            row.appendChild(tableDataTime);
-            
-            var tableDataCookies = document.createElement('td');
-            tableDataCookies.innerText = storeRandNum;
-            row.appendChild(tableDataCookies);
-            stores[storesIndex].total += storeRandNum;
-
-            var tableDataMoney = document.createElement('td');
-            tableDataMoney.innerText = storeRandNum * stores[storesIndex].ave;
-            row.appendChild(tableDataMoney);
-                    
-            tbody.appendChild(row);
-    
-        }
-
-        // Print the totals
-        row = document.createElement('tr');
-
-        var printTotal = document.createElement('th');
-        printTotal.innerText = 'Total';
-        row.appendChild(printTotal);
-
-        printTotal = document.createElement('th');
-        printTotal.innerText = stores[storesIndex].total;
-        row.appendChild(printTotal);
-
-        printTotal = document.createElement('th');
-        printTotal.innerText = stores[storesIndex].total * stores[storesIndex].ave;
-        row.appendChild(printTotal);
-
-        tbody.appendChild(row);
-        
-
-    }
-}
-
-printStores();
+for(var storesIndex = 0; storesIndex < stores.length; storesIndex++) {
+    stores[storesIndex].createTitle();
+    stores[storesIndex].createTables();
+    stores[storesIndex].createData();
+};
