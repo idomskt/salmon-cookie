@@ -88,3 +88,19 @@ for(var storesIndex = 0; storesIndex < stores.length; storesIndex++) {
     stores[storesIndex].createTables();
     stores[storesIndex].createData();
 };
+
+function expandOnClick() {
+    var tables = document.querySelector('div.storeTables');
+    var button = document.getElementsByTagName('button')[0];
+
+    if(tables.classList.contains('close')) {
+        button.innerText = 'Hide tables';
+        tables.classList.remove('close');
+        tables.classList.add('open');
+    } else {
+        button.innerText = 'Check tables';
+        tables.classList.add('close');
+        tables.classList.remove('open');
+    }
+    
+}

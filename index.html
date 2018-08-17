@@ -15,19 +15,18 @@
             <img src="https://raw.githubusercontent.com/acl-nw-bootcamp/2018-summer/master/week_3-4/assets/salmon.png" alt="">
         </div>
         <ul class="main-menu">
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#locations">Locations</a></li>
         </ul>
     </header>
     <main>
         <h2 class="title">Family Owned Bakery Since 1965</h2>
-        <section class="about">
+        <section id="about" class="about">
             <h2>Our Story</h2>
             <p>Lorem ipsum dolo Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborumLorem ipsum dolo Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
         </section>
-        <section class="menu-body outer">
+        <section id="menu" class="menu-body outer">
             <div class="inner">
                     <div class="menu-item">
                         <div class="menu-item-name">
@@ -114,7 +113,39 @@
             <blockquote>Lorem ipenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident!</blockquote>
         </section>
 
-        <div class="storeTables">
+        <section id="locations" class="locationsOnMap">
+            <div class="locationOnMap">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>1. Pioneer Square</h3>
+                <p>123 Pioneer St,<br>Portland, OR, 97210</p>
+            </div>
+            <div class="locationOnMap">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>2. Portland Airport</h3>
+                <p>123 PDX St,<br>Portland, OR, 97213</p>
+            </div>
+            <div class="locationOnMap">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>3. Washington Square</h3>
+                <p>123 Washington St,<br>Portland, OR, 97215</p>
+            </div>
+            <div class="locationOnMap">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>4. Sellwood</h3>
+                <p>123 Sellwood St,<br>Portland, OR, 97212</p>
+            </div>
+            <div class="locationOnMap">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>5. Pearl District</h3>
+                <p>123 Pearl St,<br>Portland, OR, 97211</p>
+            </div>
+            <img src="http://i44.photobucket.com/albums/f35/idomosko/Screenshot%20712_zpsdq3gnhh2.jpg" alt="">
+        </section>
+    </main>
+
+    <section class="button"><button onclick="expandOnClick()">Check Tables</button></section>
+    <section class="tables">
+        <div class="storeTables close">
             <div id="pioneerSquare" class="location pioneer-square">
                 <h2 id="pioneerSquareTitle"></h2>
             </div>
@@ -135,7 +166,7 @@
                 <h2 id="pearlDistrictTitle"></h2>
             </div>
         </div>
-    </main>
+    </section>
     <footer></footer>
     <script src="scripts.js"></script>
 </body>
