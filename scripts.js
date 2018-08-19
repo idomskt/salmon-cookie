@@ -73,7 +73,6 @@ var Store = function(id, name, min, max, ave) {
 
 }
 
-
 var stores = [];
 
 stores.push(new Store('pioneerSquare', 'Pioneer Square', 17, 88, 5.2));
