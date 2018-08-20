@@ -10,9 +10,23 @@ var Store = function(id, name, min, max, ave) {
         return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     };
 
-    this.createTitle = function() {
-        var titleID = document.getElementById(this.id + 'Title');
-        titleID.innerText = this.name;
+    this.createDivs = function() {
+        var allTables = document.getElementsByClassName('storeTables')[0];
+        var tableDiv = document.createElement('div');
+        tableDiv.setAttribute('id', id);
+        tableDiv.setAttribute('class', "location");
+        var tableH2 = document.createElement('h2');
+        tableH2.setAttribute('id', id+'Title');
+        tableH2.innerText = this.name;
+        tableDiv.appendChild(tableH2);
+        allTables.appendChild(tableDiv);
+
+        if(document.forms[0].tablePosition.value == '' || document.forms[0].tablePosition.value == 'last') {
+            allTables.appendChild(tableDiv);
+        } else {
+            allTables.insertBefore(tableDiv, allTables.childNodes[0]);
+        }
+        
     };
 
     this.createTables = function() {
@@ -81,12 +95,47 @@ stores.push(new Store('washingtonSquare', 'Washington Square', 11, 38, 1.9));
 stores.push(new Store('sellwood', 'Sellwood', 20, 48, 3.3));
 stores.push(new Store('pearlDistrict', 'Pearl District', 3, 24, 2.6));
 
+function addStore() {
+    var form = document.forms[0];
+    var storeName = form.storeName.value;
+    var minCust = parseInt(form.minCust.value);
+    var maxCust = parseInt(form.maxCust.value);
+    var average = parseInt(form.average.value);
+    var storeID = storeName.split(' ');
+    var idFirstWord = storeID[0];
+    var idSecondWord = storeID[1];
+    var secondWordUpper = idSecondWord[0].charAt(0).toUpperCase() + idSecondWord.substr(1);;
+    var storeIDFull = idFirstWord.toLowerCase() + secondWordUpper;
+    var formFeedback = form.getElementsByTagName('p')[0];
 
-for(var storesIndex = 0; storesIndex < stores.length; storesIndex++) {
-    stores[storesIndex].createTitle();
-    stores[storesIndex].createTables();
-    stores[storesIndex].createData();
-};
+    if(!storeName) {
+        formFeedback.innerText = 'Please fill all required inputs';
+        form.storeName.parentElment.style.color = 'red';
+    } else if(!minCust) {
+        formFeedback.innerText = 'Please fill all required inputs';
+        form.minCust.style.color = 'red';
+    } else if(!maxCust) {
+        formFeedback.innerText = 'Please fill all required inputs';
+        form.maxCust.style.color = 'red';
+    } else if(!average) {
+        formFeedback.innerText = 'Please fill all required inputs';
+        form.average.style.color = 'red';
+    } else {
+        stores.push(new Store(storeIDFull, storeName, minCust, maxCust, average));
+        stores[stores.length -1].createDivs();
+        stores[stores.length -1].createTables();
+        stores[stores.length -1].createData();
+    }
+ 
+
+}
+
+
+    for(var storesIndex = 0; storesIndex < stores.length; storesIndex++) {
+        stores[storesIndex].createDivs();
+        stores[storesIndex].createTables();
+        stores[storesIndex].createData();
+    };
 
 function expandOnClick() {
     var tables = document.querySelector('div.storeTables');
@@ -103,3 +152,4 @@ function expandOnClick() {
     }
     
 }
+

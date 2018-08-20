@@ -144,26 +144,25 @@
     <section class="button"><button onclick="expandOnClick()">Check Tables</button></section>
     <section class="tables">
         <div class="storeTables close">
-            <div id="pioneerSquare" class="location pioneer-square">
-                <h2 id="pioneerSquareTitle"></h2>
-            </div>
 
-            <div id="portlandAirport" class="location portland-airport">
-                <h2 id="portlandAirportTitle"></h2>
-            </div>
-
-            <div id="washingtonSquare" class="location washington-square">
-                <h2 id="washingtonSquareTitle"></h2>
-            </div>
-
-            <div id="sellwood" class="location sellwood">
-                <h2 id="sellwoodTitle"></h2>
-            </div>
-
-            <div id="pearlDistrict" class="location pearl-district">
-                <h2 id="pearlDistrictTitle"></h2>
-            </div>
         </div>
+        
+          <form action="" >
+              
+              <label for=""> Store Name <input type="text" id="storeName"></label><br>
+              <label for="">Min Customers <input type="number" id="minCust"><span></span></label><br>
+              <label for="">Max Customers <input type="number" id="maxCust"></label><br>
+              <label for="">Average Transaction<input type="number" id="average"></label><br>
+              <label for="">Where should I position the table?
+                  <input type="radio" id="first" name="tablePosition" value="first"/>
+                  <label for="start">First</label>
+                  <input type="radio" id="last" name="tablePosition" value="last"/>
+                  <label for="start">Last</label>
+              </label>
+              <p></p>
+          </form>
+          <button onclick="addStore()">Add Store</button>
+
     </section>
     <footer></footer>
     <script src="scripts.js"></script>
